@@ -14,7 +14,17 @@ export class AppComponent {
   ngOnInit(){
 this._weather.daylyForecast()
   .subscribe(res=>{
-  console.log(res)
+    let max_temp=res['data'].map(res=>res.max_temp)
+    let min_temp=res['data'].map(res=>res.min_temp)
+    let alldates=res['data'].map(res=>res.dt)
+   
+    let weatherDates=[]
+    min_temp.forEach((res)=>{
+      let jsdate=new Date(res )
+      weatherDates.push(jsdate.toLocaleTimeString('en',{year:'numeric', month:'short  ',day:'numeric'}))
+    })
+ 
+
   })
   }
 }

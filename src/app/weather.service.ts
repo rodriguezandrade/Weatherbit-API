@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 })
 export class WeatherService {
   daylyForecast(): any {
-    return this._http.get("https://api.weatherbit.io/v2.0/forecast/daily?key=3dd1694285a347d4ac8c5c20608f68de&postal_code=85000&country=MX")
+    return this._http.get("https://api.weatherbit.io/v2.0/forecast/daily?days=15&city_id=4013704&units=M&key=3dd1694285a347d4ac8c5c20608f68de")
     .map(result=>result)
   }
 
