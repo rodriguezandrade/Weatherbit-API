@@ -14,7 +14,12 @@
           <div class="row">
             
             <div class="col">
-            aqui va la grafica
+                <div *ngIf="chart">
+                    <canvas  id="canvas">{{chart}}</canvas>
+                  </div>
+
+                   
+               
             </div>
               <div class="col">
         
@@ -38,7 +43,7 @@
                                     Celsius
                                   </button>
                                   <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">Farenheit</a>
+                                      <a class="dropdown-item" href="#">Navojoa</a>
                                   </div>
                                 </div>
 
@@ -49,29 +54,35 @@
                                   <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
                                 </div>
                                 <br/>
+
+                                
                     
                     <table class="table">
                         <thead>
                           <tr>
                             <th scope="col">Date</th>
-                            <th scope="col">Temperature</th>
+                            <th scope="col">Temperature Min</th>
+                            <th scope="col">Temperature Max</th>
                           
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <th scope="row">1</th>
+                            <td></td>
                             <td>Mark</td>
                             
                           </tr>
                           <tr>
                             <th scope="row">2</th>
                             <td>Jacob</td>
+                            <td>Mark</td>
                            
                           </tr>
                           <tr>
                             <th scope="row">3</th>
                             <td>Larry</td>
+                            <td>Mark</td>
                            
                           </tr>
                         </tbody>

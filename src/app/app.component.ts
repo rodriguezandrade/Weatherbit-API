@@ -8,23 +8,63 @@ import { Chart } from 'chart.js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+chart=[ ];
   title = 'dashboardWeather';
   constructor(private _weather:WeatherService){}
   ngOnInit(){
 this._weather.daylyForecast()
   .subscribe(res=>{
+     console.log(res)
     let max_temp=res['data'].map(res=>res.max_temp)
     let min_temp=res['data'].map(res=>res.min_temp)
-    let alldates=res['data'].map(res=>res.dt)
+    let alldates=res['data'].map(res=>res.datetime)
+    console.log(alldates)
    
     let weatherDates=[]
-    min_temp.forEach((res)=>{
+    alldates.forEach((res)=>{
       let jsdate=new Date(res )
-      weatherDates.push(jsdate.toLocaleTimeString('en',{year:'numeric', month:'short  ',day:'numeric'}))
+      weatherDates.push(jsdate.toLocaleDateString('en',{year: 'numeric', month: 'long', day: 'numeric' }))
     })
+ this.chart=new Chart('canvas',{
+ type:'line',
+ data:{
+   labels:weatherDates,
+   datasets:[{
+     data:max_temp,
+     borderColor:'#3cba9f',
+     fill:false
+   },
+   {
+    data:min_temp,
+    borderColor:'#3cba9f',
+    fill:false
+  },
+  ]
+ },
+ options:{
+  elements: {
+    line: {
+        tension: 0
+    }
+},
+legend:{
+  display:false
+},
+scales:{
+  xAxes:[{
+    display:true
+  }],
+  yAxes:[{
+    display:true
+  }]
+}
+}
+
+ })
+ 
  
 
+   
   })
-  }
+  } 
 }
