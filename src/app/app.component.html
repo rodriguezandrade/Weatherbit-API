@@ -10,7 +10,7 @@
 <form class="form-inline   ">
  
     <div class="row ">
-        <div class="col-sm-8 align-self-center">
+        <div class="col-sm-8 ">
           
             <div class="col">
                 <div *ngIf="chart">
@@ -28,7 +28,7 @@
                              <div class="btn-group">
                                      
                                       <select class="  btn-success btn-lg  " type="button" name="select" [(ngModel)]="SelectedCourse" (change)="Filter($event.target.value)" >
-                                        <option  *ngFor="let item of list"  >  {{item}} 
+                                        <option  *ngFor="let item of cities"  >  {{item}} 
                                          
                                         </option>
                                       </select>
@@ -61,28 +61,26 @@
                          <thead>
                            <tr>
                              <th scope="col">Date</th>
-                             <th scope="col">Temperature Min</th>
-                             <th scope="col">Temperature Max</th>
+                             
+                             <th scope="col">Temperature max</th>
+                             <th scope="col">Temperature min</th>
                            
                            </tr>
                          </thead>
                          <tbody>
-                           <tr>
-                             <th scope="row">1</th>
-                             <td></td>
-                             <td>Mark</td>
+                            <div *ngFor="  let da of maxima;"></div>
+                           <tr *ngFor="  let item of maxima;">
+                             <th  scope="row">{{item.datetime}}</th>
                              
+                             <td   >  {{item.max_temp}}  </td> 
+                             <td   >  {{item.min_temp}}  </td> 
+                              </tr>
+                               
+ 
+                           <tr>
                            </tr>
                            <tr>
-                             <th scope="row">2</th>
-                             <td>Jacob</td>
-                             <td>Mark</td>
-                            
-                           </tr>
-                           <tr>
-                             <th scope="row">3</th>
-                             <td>Larry</td>
-                             <td>Mark</td>
+                              
                             
                            </tr>
                          </tbody>

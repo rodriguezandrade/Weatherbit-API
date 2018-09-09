@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import{HttpClient, HttpHeaders} from '@angular/common/http';
+import{Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable({
@@ -12,7 +13,6 @@ export class WeatherService {
   }
 
 
- private _dataapi='https://api.weatherbit.io/v2.0/forecast/daily?days=16&city_id=4013704&units=M&key=3dd1694285a347d4ac8c5c20608f68de';
   
 getCities() {
    return ['Obregón',
@@ -20,11 +20,11 @@ getCities() {
   'Hermosillo',
   'Nogales'
 ]
+
+
 }
 
-Filter(value:any){
-alert(value);
-}
+
 
   constructor(private _http: HttpClient) { }
  
