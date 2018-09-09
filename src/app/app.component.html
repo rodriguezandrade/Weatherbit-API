@@ -7,89 +7,105 @@
 
 </div>
 
-<form class="form-inline ">
-    
-      <div class="container">
-         
-          <div class="row">
-            
+<form class="form-inline   ">
+ 
+    <div class="row ">
+        <div class="col-sm-8 align-self-center">
+          
             <div class="col">
                 <div *ngIf="chart">
                     <canvas  id="canvas">{{chart}}</canvas>
                   </div>
-
-                   
-               
-            </div>
-              <div class="col">
+                 
+             
+          </div>
+          
+          </div>
+        <div class="col-sm-4"> 
+            <div class="col">
         
-               <!-- Large button groups (default and split) -->
-                              <p class="text-left">City</p>
-                            <div class="btn-group">
-                                    <button class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                       Obregón
-                                </button>
-                                <div class="dropdown-menu">
+                <!-- Large button groups (default and split) -->
+                               <p class="text-left">City</p>
+                             <div class="btn-group">
+                                     <button class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                        Obregón
+                                 </button>
+                                 <div class="dropdown-menu">
+                                     
+                                     <a class="dropdown-item" href="#">Navojoa</a>
+                                     <a class="dropdown-item" href="#">Hermosillo</a>
+                                     <a class="dropdown-item" href="#">Nogales</a>
+                                 </div>
+                               </div>
+ 
+                               <p class="text-left">Scale</p>
+                               <div class="btn-group">
+                                       <button class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     Celsius
+                                   </button>
+                                   <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="#">Navojoa</a>
+                                   </div>
+                                 </div>
+ 
                                     
-                                    <a class="dropdown-item" href="#">Navojoa</a>
-                                    <a class="dropdown-item" href="#">Hermosillo</a>
-                                    <a class="dropdown-item" href="#">Nogales</a>
-                                </div>
-                              </div>
-
-                              <p class="text-left">Scale</p>
-                              <div class="btn-group">
-                                      <button class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Celsius
-                                  </button>
-                                  <div class="dropdown-menu">
-                                      <a class="dropdown-item" href="#">Navojoa</a>
-                                  </div>
-                                </div>
-
-                                   
-                                <p class="text-left">Date</p>
-                                <div class="form-group"> <!-- Date input -->
-                               
-                                  <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-                                </div>
-                                <br/>
-
+                                 <p class="text-left">Date</p>
+                                 <div class="form-group"> <!-- Date input -->
                                 
-                    
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">Temperature Min</th>
-                            <th scope="col">Temperature Max</th>
-                          
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td></td>
-                            <td>Mark</td>
+                                   <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+                                 </div>
+                                 <br/>
+ 
+                                 JSON.stringify("chart");  
+                     
+                     <table class="table">
+                         <thead>
+                           <tr>
+                             <th scope="col">Date</th>
+                             <th scope="col">Temperature Min</th>
+                             <th scope="col">Temperature Max</th>
+                           
+                           </tr>
+                         </thead>
+                         <tbody>
+                           <tr>
+                             <th scope="row">1</th>
+                             <td></td>
+                             <td>Mark</td>
+                             
+                           </tr>
+                           <tr>
+                             <th scope="row">2</th>
+                             <td>Jacob</td>
+                             <td>Mark</td>
                             
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Mark</td>
-                           
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>Mark</td>
-                           
-                          </tr>
-                        </tbody>
-                      </table>
-                      
-                                
-              </div>
+                           </tr>
+                           <tr>
+                             <th scope="row">3</th>
+                             <td>Larry</td>
+                             <td>Mark</td>
+                            
+                           </tr>
+                         </tbody>
+                       </table>
+                       
+                                 
+               </div>
+
+        </div>
+      </div>
+ 
+
+
+
+
+      <div class="container">
+           
+         
+
+          <div class="row">
+              
+             
           </div>
         </div>
 
