@@ -16,8 +16,7 @@
                 <div *ngIf="chart">
                     <canvas  id="canvas">{{chart}}</canvas>
                   </div>
-                 
-             
+                           
           </div>
           
           </div>
@@ -27,15 +26,15 @@
                 <!-- Large button groups (default and split) -->
                                <p class="text-left">City</p>
                              <div class="btn-group">
-                                     <button class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                        Obregón
-                                 </button>
-                                 <div class="dropdown-menu">
                                      
-                                     <a class="dropdown-item" href="#">Navojoa</a>
-                                     <a class="dropdown-item" href="#">Hermosillo</a>
-                                     <a class="dropdown-item" href="#">Nogales</a>
-                                 </div>
+                                      <select class="  btn-success btn-lg  " type="button" name="select" [(ngModel)]="SelectedCourse" (change)="Filter($event.target.value)" >
+                                        <option  *ngFor="let item of list"  >  {{item}} 
+                                         
+                                        </option>
+                                      </select>
+                               
+                                   
+                                  
                                </div>
  
                                <p class="text-left">Scale</p>
@@ -56,7 +55,7 @@
                                  </div>
                                  <br/>
  
-                                 JSON.stringify("chart");  
+                                 
                      
                      <table class="table">
                          <thead>

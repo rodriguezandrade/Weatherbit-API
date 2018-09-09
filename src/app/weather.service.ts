@@ -11,8 +11,22 @@ export class WeatherService {
     .map(result=>result)
   }
 
-  constructor(private _http: HttpClient) { }
 
+ private _dataapi='https://api.weatherbit.io/v2.0/forecast/daily?days=16&city_id=4013704&units=M&key=3dd1694285a347d4ac8c5c20608f68de';
   
+getCities() {
+   return ['Obregón',
+  'Navojoa',
+  'Hermosillo',
+  'Nogales'
+]
+}
+
+Filter(value:any){
+alert(value);
+}
+
+  constructor(private _http: HttpClient) { }
+ 
 
 }
