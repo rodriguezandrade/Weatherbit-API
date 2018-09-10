@@ -7,8 +7,8 @@
 
 </div>
 
-<form class="form-inline   ">
- 
+<form class="form-inline"  (loaded)="Filter($event.target.value)"   >
+    <div   class="alert alert-success" role="alert"   *ngFor="  let item of alerta;">{{item}}</div>
     <div class="row ">
         <div class="col-sm-8 ">
           
@@ -24,15 +24,17 @@
             <div class="col">
         
                 <!-- Large button groups (default and split) -->
-               username:<input type="text" [(ngModel)]="id">
-                <button (click)="search()">buscar</button>
+              
                                <p class="text-left">City</p>
+                              
                              <div class="btn-group">
+
+                                <!-- <select class="  btn-success btn-lg  " type="button" name="select" [(ngModel)]="SelectedCourse" (click)="updateId(result.ciudadcodigo)" >
+                                    <option  *ngFor="let result of jsonList"  >  {{result.ciudadcodigo}}  -->
                                      
-                                      <select class="  btn-success btn-lg  " type="button" name="select" [(ngModel)]="SelectedCourse" (change)="Filter($event.target.value)" >
-                                        <option  *ngFor="let item of cities"  >  {{item}} 
-                                         
-                                        </option>
+                                       <select class="  btn-success btn-lg  " type="button" name="select" [(ngModel)]="SelectedCourse" (change)="Filter($event.target.value)" ng-reflect-model="4013704" >
+                                          <option value="4013704" selected="selected">Ciudad Obregón</option>
+                                        <option  *ngFor="let item of cities" value="{{item.codigo}}" >{{item.ciudad}}</option>
                                       </select>
                                
                                    
@@ -41,12 +43,11 @@
  
                                <p class="text-left">Scale</p>
                                <div class="btn-group">
-                                       <button class="btn btn-success btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                     Celsius
-                                   </button>
-                                   <div class="dropdown-menu">
-                                       <a class="dropdown-item" href="#">Navojoa</a>
-                                   </div>
+                                  <select class="  btn-success btn-lg  " type="button" name="select" [(ngModel)]="SelectedCourse"  (click)="updateId(result.ciudadcodigo, result.unidad)" >
+                                      <option *ngFor="let result of jsonList"  >  {{result.unidad}} 
+                                       
+                                      </option>
+                                    </select>
                                  </div>
  
                                     
