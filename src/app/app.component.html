@@ -24,6 +24,8 @@
             <div class="col">
         
                 <!-- Large button groups (default and split) -->
+               username:<input type="text" [(ngModel)]="id">
+                <button (click)="search()">buscar</button>
                                <p class="text-left">City</p>
                              <div class="btn-group">
                                      
@@ -68,7 +70,7 @@
                            </tr>
                          </thead>
                          <tbody>
-                            <div *ngFor="  let da of maxima;"></div>
+                           
                            <tr *ngFor="  let item of maxima;">
                              <th  scope="row">{{item.datetime}}</th>
                              
@@ -93,27 +95,7 @@
       </div>
  
 
-
-
-
-      <div class="container">
-           
-         
-
-          <div class="row">
-              
-             
-          </div>
-        </div>
-
-
-
  
-
-
-
-        
-  
  
 
 

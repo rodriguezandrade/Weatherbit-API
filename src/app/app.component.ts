@@ -3,6 +3,7 @@ import { WeatherService } from './weather.service';
   import { Http,Response } from '@angular/http';
  
 import { Chart } from 'chart.js';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +16,9 @@ import { Chart } from 'chart.js';
           title = 'dashboardWeather';
              cities=[];
            maxima:any[ ];
-            
-          constructor(private _weather:WeatherService ){
+            id:string="";
+            response:any[ ];
+          constructor(private http:HttpClient,private _weather:WeatherService ){
 
         this.cities=this._weather.getCities()
 
@@ -27,11 +29,22 @@ import { Chart } from 'chart.js';
         console.log(this.maxima)
       })
        }
-          
-
+       Filter(event:any){
+        this.http.get("https://api.weatherbit.io/v2.0/forecast/daily?days=15&units=M&key=3dd1694285a347d4ac8c5c20608f68de&city_id="+event)
+        .subscribe((res)=> {
+          let response=res['data'] ;
+          this.response=response
+         console.log(this.response);
+        })
+     }
+    //  Filter (event:any) {
+    //   alert( event);
+ 
+    // }
           ngOnInit(){
+            
             this._weather.daylyForecast()
-            .subscribe(res=>{
+             .subscribe(res=>{
               let max_temp=res['data'].map(res=>res.max_temp)
               let min_temp=res['data'].map(res=>res.min_temp)
               let alldates=res['data'].map(res=>res.datetime)
@@ -82,5 +95,6 @@ import { Chart } from 'chart.js';
           
              
             })
-          } 
+          }
+         
         }
